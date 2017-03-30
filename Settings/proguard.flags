@@ -1,0 +1,33 @@
+# Keep all Fragments in this package, which are used by reflection.
+-keep class com.android.settings.*Fragment
+-keep class com.android.settings.*Picker
+-keep class com.android.settings.*Settings
+-keep class com.android.settings.wifi.*Settings
+-keep class com.android.settings.deviceinfo.*
+-keep class com.android.settings.bluetooth.*
+-keep class com.android.settings.applications.*
+-keep class com.android.settings.inputmethod.*
+-keep class com.android.settings.ResetNetwork
+-keep class com.android.settings.ResetNetworkConfirm
+-keep class com.android.settings.MasterClear
+-keep class com.android.settings.MasterClearConfirm
+-keep class com.android.settings.accounts.*
+-keep class com.android.settings.fuelgauge.*
+-keep class com.android.settings.users.*
+-keep class com.android.settings.nfc.*
+-keep class com.android.settings.notification.*
+-keep class com.android.settings.cyanogenmod.*
+
+-keep class com.android.settings.cyanogenmod.*Settings
+-keep class com.android.settings.privacyguard.*
+
+# These would be stripped out since they are being created with reflection
+-keep class com.android.settings.dashboard.GenericSwitchToggle { *; }
+-keep class com.android.settings.wifi.WifiEnabler { *; }
+-keep class com.android.settings.bluetooth.BluetoothEnabler { *; }
+-keep class com.android.settings.dashboard.MobileNetworksEnabler { *; }
+
+# Keep click responders
+-keepclassmembers class com.android.settings.inputmethod.UserDictionaryAddWordActivity {
+  *** onClick*(...);
+}

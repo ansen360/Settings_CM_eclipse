@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<dashboard-categories
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <!-- WIRELESS and NETWORKS -->
+    <dashboard-category
+            android:id="@+id/wireless_section"
+            android:key="@string/category_key_wireless"
+            android:title="@string/header_category_wireless_networks" >
+
+        <!-- Wifi -->
+        <dashboard-tile
+                android:id="@+id/wifi_settings"
+                android:title="@string/wifi_settings_title"
+                android:fragment="com.android.settings.wifi.WifiSettings"
+                android:icon="@drawable/ic_settings_wireless"
+                settings:switchClass="com.android.settings.wifi.WifiEnabler"
+                />
+
+        <!-- Bluetooth -->
+        <dashboard-tile
+                android:id="@+id/bluetooth_settings"
+                android:title="@string/bluetooth_settings_title"
+                android:fragment="com.android.settings.bluetooth.BluetoothSettings"
+                android:icon="@drawable/ic_settings_bluetooth"
+                settings:switchClass="com.android.settings.bluetooth.BluetoothEnabler"
+                />
+
+        <dashboard-tile
+                android:id="@+id/mobile_networks"
+                android:title="@string/network_settings_title"
+                android:icon="@drawable/ic_settings_cellular"
+                settings:switchClass="com.android.settings.dashboard.MobileNetworksEnabler"
+                >
+            <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.phone"
+                    android:targetClass="com.android.phone.MobileNetworkSettings" />
+        </dashboard-tile>
+
+        <!-- SIM Cards -->
+        <dashboard-tile
+                android:id="@+id/sim_settings"
+                android:title="@string/sim_settings_title"
+                android:fragment="com.android.settings.sim.SimSettings"
+                android:icon="@drawable/ic_settings_sim"
+                />
+
+        <!-- Data Usage -->
+        <dashboard-tile
+                android:id="@+id/data_usage_settings"
+                android:title="@string/data_usage_summary_title"
+                android:fragment="com.android.settings.DataUsageSummary"
+                android:icon="@drawable/ic_settings_data_usage"
+                />
+
+        <!-- Operator hook -->
+        <dashboard-tile
+                android:id="@+id/operator_settings"
+                android:fragment="com.android.settings.WirelessSettings" >
+            <intent android:action="com.android.settings.OPERATOR_APPLICATION_SETTING" />
+        </dashboard-tile>
+
+        <!-- Other wireless and network controls -->
+        <dashboard-tile
+                android:id="@+id/wireless_settings"
+                android:title="@string/radio_controls_title"
+                android:fragment="com.android.settings.WirelessSettings"
+                android:icon="@drawable/ic_settings_more"
+                />
+
+        <!-- Manufacturer hook -->
+        <dashboard-tile
+                android:id="@+id/manufacturer_settings"
+                android:fragment="com.android.settings.WirelessSettings">
+            <intent android:action="com.android.settings.MANUFACTURER_APPLICATION_SETTING" />
+        </dashboard-tile>
+    </dashboard-category>
+
+    <!-- DEVICE -->
+    <dashboard-category
+            android:id="@+id/device_section"
+            android:key="@string/category_key_device"
+            android:title="@string/header_category_device" >
+
+        <!-- Sound -->
+        <dashboard-tile
+                android:id="@+id/sound_settings"
+                android:title="@string/category_sounds"
+                android:fragment="com.android.settings.notification.SoundSettings"
+                android:icon="@drawable/ic_settings_sounds"
+                />
+
+        <!-- Display & lights -->
+        <dashboard-tile
+                android:id="@+id/display_and_lights_settings"
+                android:title="@string/display_and_lights"
+                android:fragment="com.android.settings.DisplaySettings"
+                android:icon="@drawable/ic_settings_display"
+                />
+
+        <!-- Themes -->
+        <!-- NOTE: Intent.parseIntent looks for "categories" tag and not "category" -->
+        <dashboard-tile
+                android:id="@+id/theme_settings"
+                android:title="@string/themes_settings_title"
+                android:icon="@drawable/ic_settings_themes">
+            <intent
+                    android:action="android.intent.action.MAIN" >
+                <categories android:name="cyanogenmod.intent.category.APP_THEMES" />
+            </intent>
+        </dashboard-tile>
+
+        <!-- Notification manager -->
+        <dashboard-tile
+                android:id="@+id/notification_manager"
+                android:title="@string/notification_manager"
+                android:fragment="com.android.settings.notification.NotificationManagerSettings"
+                android:icon="@drawable/ic_settings_notifications"
+                />
+
+        <!-- Lock screen -->
+        <dashboard-tile
+                android:id="@+id/lockscreen_settings"
+                android:title="@string/lockscreen_settings"
+                android:fragment="com.android.settings.SecuritySettings"
+                android:icon="@drawable/ic_settings_lockscreen">
+                <extra android:name="filter_type" android:value="0" />
+        </dashboard-tile>
+
+        <!-- Buttons -->
+        <dashboard-tile
+                android:id="@+id/button_settings"
+                android:title="@string/button_pref_title"
+                android:fragment="com.android.settings.ButtonSettings"
+                android:icon="@drawable/ic_settings_buttons"
+                />
+
+        <external-tiles />
+
+        <!-- Battery -->
+        <dashboard-tile
+                android:id="@+id/battery_settings"
+                android:title="@string/power_usage_summary_title"
+                android:fragment="com.android.settings.fuelgauge.PowerUsageSummary"
+                android:icon="@drawable/ic_settings_battery"
+                />
+
+        <!-- Security -->
+        <dashboard-tile
+                android:id="@+id/security_settings"
+                android:title="@string/security_settings_title"
+                android:fragment="com.android.settings.SecuritySettings"
+                android:icon="@drawable/ic_settings_security"
+                />
+
+        <!-- Memory -->
+        <dashboard-tile
+                android:id="@+id/manage_memory"
+                android:title="@string/memory_settings_title"
+                android:fragment="com.android.settings.applications.ProcessStatsSummary"
+                android:icon="@drawable/ic_settings_memory"
+                />
+
+        <!-- Manage users -->
+        <dashboard-tile
+                android:id="@+id/user_settings"
+                android:title="@string/user_settings_title"
+                android:fragment="com.android.settings.users.UserSettings"
+                android:icon="@drawable/ic_settings_multiuser"
+                />
+
+    </dashboard-category>
+
+    <!-- Personalization -->
+    <dashboard-category
+            android:id="@+id/personal_section"
+            android:key="@string/category_key_personal"
+            android:title="@string/header_category_personal" >
+
+        <!-- Home -->
+        <dashboard-tile
+                android:id="@+id/home_settings"
+                android:title="@string/home_settings"
+                android:fragment="com.android.settings.HomeSettings"
+                android:icon="@drawable/ic_settings_home"
+                />
+
+        <!-- Profiles -->
+        <dashboard-tile
+                android:id="@+id/profile_settings"
+                android:fragment="com.android.settings.profiles.ProfilesSettings"
+                android:title="@string/profiles_settings_title"
+                android:icon="@drawable/ic_settings_profiles"
+                />
+
+        <!-- Status bar -->
+        <dashboard-tile
+                android:id="@+id/status_bar_settings"
+                android:title="@string/status_bar_title"
+                android:fragment="com.android.settings.cyanogenmod.StatusBarSettings"
+                android:icon="@drawable/ic_settings_statusbar"
+                />
+
+        <!-- Application Settings -->
+        <dashboard-tile
+                android:id="@+id/application_settings"
+                android:title="@string/applications_settings"
+                android:fragment="com.android.settings.applications.ManageApplications"
+                android:icon="@drawable/ic_settings_applications"
+                />
+
+        <!-- Account -->
+        <dashboard-tile
+                android:id="@+id/account_settings"
+                android:title="@string/account_settings_title"
+                android:fragment="com.android.settings.accounts.AccountSettings"
+                android:icon="@drawable/ic_settings_accounts"
+                />
+
+        <!-- Marker for where to place external tiles in this category -->
+        <external-tiles />
+
+        <!-- CyanogenMod Privacy Settings -->
+        <!-- This is the 'real' Privacy items and includes Privacy Guard, Blacklist & WhisperPush -->
+        <dashboard-tile
+                android:id="@+id/privacy_settings_cyanogenmod"
+                android:title="@string/privacy_settings_cyanogenmod_title"
+                android:fragment="com.android.settings.cyanogenmod.PrivacySettings"
+                android:icon="@drawable/ic_settings_privacy"
+                />
+
+        <!-- Location -->
+        <dashboard-tile
+                android:id="@+id/location_settings"
+                android:title="@string/location_settings_title"
+                android:fragment="com.android.settings.location.LocationSettings"
+                android:icon="@drawable/ic_settings_location"
+                />
+
+    </dashboard-category>
+
+    <!-- SYSTEM -->
+    <dashboard-category
+        android:id="@+id/system_section"
+        android:key="@string/category_key_system"
+        android:title="@string/header_category_system" >
+
+        <!-- Date & Time -->
+        <dashboard-tile
+                android:id="@+id/date_time_settings"
+                android:title="@string/date_and_time_settings_title"
+                android:fragment="com.android.settings.DateTimeSettings"
+                android:icon="@drawable/ic_settings_date_time"
+                />
+
+        <!-- Weather -->
+        <dashboard-tile
+                android:id="@+id/weather_settings"
+                android:title="@string/weather_settings_title"
+                android:fragment="com.android.settings.cyanogenmod.WeatherServiceSettings"
+                android:icon="@drawable/ic_settings_weather"
+                />
+
+        <!-- Accessibility feedback -->
+        <dashboard-tile
+                android:id="@+id/accessibility_settings"
+                android:title="@string/accessibility_settings"
+                android:fragment="com.android.settings.accessibility.AccessibilitySettings"
+                android:icon="@drawable/ic_settings_accessibility"
+                />
+
+        <!-- Storage -->
+        <dashboard-tile
+                android:id="@+id/storage_settings"
+                android:title="@string/storage_usb_settings"
+                android:fragment="com.android.settings.deviceinfo.StorageSettings"
+                android:icon="@drawable/ic_settings_storage"
+                />
+
+        <!-- Language -->
+        <dashboard-tile
+                android:id="@+id/language_settings"
+                android:title="@string/language_settings"
+                android:fragment="com.android.settings.inputmethod.InputMethodAndLanguageSettings"
+                android:icon="@drawable/ic_settings_language"
+                />
+
+        <!-- Backup and reset -->
+        <dashboard-tile
+                android:id="@+id/privacy_settings"
+                android:title="@string/privacy_settings"
+                android:fragment="com.android.settings.PrivacySettings"
+                android:icon="@drawable/ic_settings_backup"
+                />
+
+        <!-- Print -->
+        <dashboard-tile
+                android:id="@+id/print_settings"
+                android:title="@string/print_settings"
+                android:fragment="com.android.settings.print.PrintSettingsFragment"
+                android:icon="@drawable/ic_settings_print"
+                />
+
+        <!-- Development -->
+        <dashboard-tile
+                android:id="@+id/development_settings"
+                android:title="@string/development_settings_title"
+                android:fragment="com.android.settings.DevelopmentSettings"
+                android:icon="@drawable/ic_settings_development"
+                />
+
+        <!-- About Device -->
+        <dashboard-tile
+                android:id="@+id/about_settings"
+                android:title="@string/about_settings"
+                android:fragment="com.android.settings.DeviceInfoSettings"
+                android:icon="@drawable/ic_settings_about"
+                />
+
+    </dashboard-category>
+
+</dashboard-categories>

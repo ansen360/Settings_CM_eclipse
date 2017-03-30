@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- If false, MIN is displayed. If true, MSID is displayed. -->
+    <bool name="config_msid_enable" translatable="false">false</bool>
+
+    <string name="additional_system_update" translatable="false"></string>
+    <string name="additional_system_update_menu" translatable="false"></string>
+
+    <!-- TODO: This is purely enforced by the interface, and does not affect what
+         strings may be inserted into the actual content provider.
+         With the addition of shortcuts, it seems more likely that users will
+         find this limiting; it would be good to have the interface work with
+         very long strings too. -->
+    <integer name="maximum_user_dictionary_word_length" translatable="false">48</integer>
+
+    <!-- Dashboard number of columns -->
+    <integer name="dashboard_num_columns">1</integer>
+
+    <!-- Carrier_enabled editable -->
+    <bool name="config_allow_edit_carrier_enabled" translatable="false">false</bool>
+
+    <!-- The duration (in milliseconds) of activity transitions -->
+    <integer name="setup_wizard_transition_duration">300</integer>
+
+    <!-- Config to show/hide Wifi calling mode Preference UI option -->
+    <bool name="config_wfc_mode_supported" translatable="false">true</bool>
+
+    <!-- Config to enable/disable ppp number in APN editor -->
+    <bool name="config_ppp_enabled">false</bool>
+
+    <!-- Config to set default APN type when adding a new APN -->
+    <string name="config_default_new_apn_type" translateable="false"></string>
+
+    <!-- Config to enable duplicate APN checking. When true, disallows adding new duplicate APNs -->
+    <bool name="config_enable_duplicate_apn_checking">false</bool>
+
+    <!-- Metrics server endpoints -->
+    <string name="stats_cm_url">https://stats.cyanogenmod.org/submit</string>
+    <string name="stats_cyanogen_url">https://shopvac.cyngn.com/community/heartbeat</string>
+    <string name="stats_cyanogen_token_url">https://account.cyngn.com/api/v1/community/heartbeat_token</string>
+
+    <!-- Display ro.product.name above Device model -->
+    <bool name="config_displayDeviceName">false</bool>
+
+    <!-- SAR Level for a device -->
+    <!-- Must be overlaid by device -->
+    <bool name="config_show_sar_enable" translatable="false">false</bool>
+    <!-- Maximum Specific Absorption Rate for head -->
+    <string name="sar_head_level" translatable="false"></string>
+    <!-- Maximum Specific Absorption Rate for body -->
+    <string name="sar_body_level" translatable="false"></string>
+
+    <!-- IC Code for a device -->
+    <!-- Must be overlaid by device -->
+    <bool name="config_show_ic_enable" translatable="false">false</bool>
+    <!-- IC Code -->
+    <string name="ic_code" translatable="false"></string>
+    <string name="ic_model" translatable="false"></string>
+
+    <bool name="config_hide_wifi_region_code">false</bool>
+
+    <!-- Whether to disable allcaps default state of tabtext within datausage -->
+    <bool name="config_gcf_disable_default_tabtext_allcaps">false</bool>
+
+    <!-- When true enable color temperature setting. -->
+    <bool name="config_enableColorTemperature">false</bool>
+
+    <!-- When true Live lock screen settings will be positioned at the top -->
+    <bool name="config_showLiveLockScreenSettingsFirst">false</bool>
+
+    <!-- When true, weather options will be displayed in settings dashboard -->
+    <bool name="config_showWeatherMenu">true</bool>
+
+    <!-- When true, "show built-in" option in Privacy Guard will be available -->
+    <bool name="config_showBuiltInAppsForPG">true</bool>
+
+    <!-- Defines the location of the fingerprint sensor on the device
+         0 = back
+         1 = front
+         2 = left side
+         3 = right side
+    -->
+    <integer name="config_fingerprintSensorLocation">0</integer>
+
+    <!-- Does the device allow for manual subscription provisioning? Only works for multi-sim devices,
+         and currently depends on QC's proprietary telephony stack -->
+    <bool name="config_enableManualSubProvisioning">true</bool>
+
+    <!-- Does the device allow updating the recovery. -->
+    <bool name="config_enableRecoveryUpdater">true</bool>
+</resources>

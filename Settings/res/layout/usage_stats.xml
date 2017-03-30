@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:padding="5dp"
+        android:gravity="center_vertical"
+        android:background="@*android:color/material_grey_300"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize">
+        <TextView
+            android:layout_marginStart="11dp"
+            android:text="@string/display_order_text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/typeSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:entries="@array/usage_stats_display_order_types" />
+    </LinearLayout>
+
+    <ListView android:id="@+id/pkg_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:drawSelectorOnTop="false" />
+</LinearLayout>
