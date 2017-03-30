@@ -1252,3 +1252,23 @@ com.android.dex.DexException: Multiple dex files define Lcyanogenmod/platform/R$
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
+!SESSION 2017-03-30 13:48:00.535 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.8.0_91
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Framework arguments:  -product adtproduct -product adtproduct -product adtproduct -product adtproduct
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product adtproduct -product adtproduct -product adtproduct -data D:\Settings_CM_eclipse -product adtproduct
+
+!ENTRY org.eclipse.equinox.app 0 0 2017-03-30 13:48:01.732
+!MESSAGE Product adtproduct could not be found.
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-03-30 13:48:04.733
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\admin'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui 2 2 2017-03-30 13:53:50.176
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
